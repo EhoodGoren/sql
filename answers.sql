@@ -65,3 +65,11 @@ SELECT first_name, last_name, gender
   FROM emp
   WHERE gender='M')
  LIMIT 100
+
+--  Exercise 10
+SELECT first_name, last_name, gender, salary, age_in_years
+ from emp
+ WHERE last_name IN (
+  SELECT last_name
+  FROM emp
+  WHERE salary > 70000)
