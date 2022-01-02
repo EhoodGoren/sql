@@ -31,3 +31,11 @@ SELECT *
  AND gender = 'F'
  AND age_in_years > 55
  AND e_mail LIKE '%gmail.com'
+
+-- Exercise 6
+SELECT first_name, last_name, age_in_years, city, state
+ FROM emp
+ WHERE first_name LIKE 'J%'
+ AND gender = 'M'
+ AND age_in_years > 50
+ AND state = 'IL'
