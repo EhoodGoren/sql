@@ -39,3 +39,11 @@ SELECT first_name, last_name, age_in_years, city, state
  AND gender = 'M'
  AND age_in_years > 50
  AND state = 'IL'
+
+-- Exercise 7
+SELECT first_name, last_name, salary, city, state
+ FROM emp
+ WHERE fathers_name LIKE '%j%'
+ AND age_in_years > 50
+ AND state = 'NY'
+ AND salary > 100000
