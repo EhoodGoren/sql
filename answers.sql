@@ -47,3 +47,12 @@ SELECT first_name, last_name, salary, city, state
  AND age_in_years > 50
  AND state = 'NY'
  AND salary > 100000
+
+-- Exercise 8
+SELECT first_name, last_name, gender, age_in_years, salary, city, state
+ FROM emp
+ WHERE gender = 'M'
+ AND last_name LIKE 'B%'
+ AND age_in_years BETWEEN 30 AND 50
+ AND state = 'NY'
+ AND salary > 80000
