@@ -98,8 +98,8 @@ SELECT *,
  CASE
   WHEN years_in_company < 5 THEN 'Rookie'
   WHEN years_in_company BETWEEN 5 AND 15 THEN 'Experienced'
-  WHEN years_in_company > 15 THEN 'Old'
   WHEN years_in_company > 15 AND name_prefix = 'Dr.' THEN 'Medical expert'
+  WHEN years_in_company > 15 THEN 'Old'
  END AS Explained_company_experience
 FROM emp
 ORDER BY years_in_company
