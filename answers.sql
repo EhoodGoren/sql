@@ -82,3 +82,13 @@ SELECT first_name, last_name, gender, salary, age_in_years
   SELECT last_name
   FROM emp
   WHERE years_in_company > 5)
+
+-- Exercise 12
+SELECT *,
+ CASE
+  WHEN age_in_years < 30 THEN 'Young'
+  WHEN age_in_years BETWEEN 30 AND 50 THEN 'Adult'
+  WHEN age_in_years > 50 THEN 'Old'
+ END AS Explained_Age
+FROM emp
+LIMIT 100
