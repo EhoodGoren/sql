@@ -56,3 +56,12 @@ SELECT first_name, last_name, gender, age_in_years, salary, city, state
  AND age_in_years BETWEEN 30 AND 50
  AND state = 'NY'
  AND salary > 80000
+
+-- Exercise 9
+SELECT first_name, last_name, gender
+ FROM emp
+ WHERE first_name IN (
+  SELECT first_name
+  FROM emp
+  WHERE gender='M')
+ LIMIT 100
