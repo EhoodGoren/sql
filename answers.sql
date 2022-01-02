@@ -10,3 +10,10 @@ SELECT first_name
  WHERE city='Palo Alto'
   AND gender='F'
 -- answer: Dawne
+
+-- Exercise 3
+SELECT *
+ FROM emp
+ ORDER BY year_of_joining, month_of_joining, day_of_joining
+ LIMIT 10
+--  asnwer: Otha Orrell
