@@ -23,3 +23,11 @@ SELECT first_name, last_name, age_in_years, city, state
  FROM emp
  WHERE first_name = 'Jack'
 --  answer: 4
+
+-- Exercise 5
+SELECT *
+ FROM emp
+ WHERE first_name LIKE 'J%'
+ AND gender = 'F'
+ AND age_in_years > 55
+ AND e_mail LIKE '%gmail.com'
