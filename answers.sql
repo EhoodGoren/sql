@@ -73,3 +73,12 @@ SELECT first_name, last_name, gender, salary, age_in_years
   SELECT last_name
   FROM emp
   WHERE salary > 70000)
+
+-- Exercise 11
+SELECT first_name, last_name, gender, salary, age_in_years
+ FROM emp
+ WHERE first_name LIKE '_____'
+ AND last_name IN (
+  SELECT last_name
+  FROM emp
+  WHERE years_in_company > 5)
