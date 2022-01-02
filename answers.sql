@@ -110,3 +110,9 @@ SELECT *
  FROM emp
  ORDER BY first_name, last_name
 LIMIT 100
+
+-- Exercise 15
+SELECT *
+ FROM emp
+ ORDER BY weight_in_kgs, age_in_years DESC
+LIMIT 500
