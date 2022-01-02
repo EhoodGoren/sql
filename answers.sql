@@ -104,3 +104,9 @@ SELECT *,
 FROM emp
 ORDER BY years_in_company
 LIMIT 1000
+
+-- Exercise 14
+SELECT *
+ FROM emp
+ ORDER BY first_name, last_name
+LIMIT 100
