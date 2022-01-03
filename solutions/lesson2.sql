@@ -1,5 +1,5 @@
 -- Exercise 1
-SELECT country, COUNT(event) as cnt
+SELECT country, COUNT(DISTINCT event) as cnt
  FROM summer
  GROUP BY country
  HAVING cnt > 100
