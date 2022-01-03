@@ -31,3 +31,12 @@ SELECT discipline, event, medal, athlete, country,
   COUNT(medal) OVER(PARTITION BY athlete) AS athlete_medals
  FROM summer
  WHERE city='London'
+
+-- Exercise 5
+SELECT DISTINCT(d.country), d.population
+ FROM (SELECT * FROM summer UNION SELECT * FROM winter) AS s_w JOIN dictionary d ON (s_w.country = d.code)
+ WHERE (
+  (s_w.sport = 'Boxing' AND s_w.year='2008' AND s_w.medal='Gold')
+  OR 
+  (s_w.sport='Skiing' AND s_w.year='2006' AND s_w.medal='Gold')
+)
