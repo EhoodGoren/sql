@@ -15,3 +15,9 @@ SELECT reviews_from_users
  FROM movies
  WHERE imdb_title_id = 'tt7336182'
 -- Answer: 47
+
+-- Exercise 4
+SELECT votes_1
+ FROM movies m JOIN ratings r ON (m.imdb_title_id = r.imdb_title_id)
+ WHERE title = 'Joker'
+-- Answer: 10650
