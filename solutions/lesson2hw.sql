@@ -58,3 +58,11 @@ SELECT AVG(age_30_to_45_avg_vote) as avg ,'avg30_45' as age_group FROM ratings
 UNION
 SELECT AVG(age_45_plus_avg_vote) as avg ,'avg45_plus' as age_group FROM ratings
 ORDER BY avg
+
+-- Exercise 10
+SELECT genre, AVG(duration) as avg_duration
+ FROM movies
+ WHERE year > 2016
+ GROUP BY genre
+ ORDER BY avg_duration DESC
+LIMIT 3
