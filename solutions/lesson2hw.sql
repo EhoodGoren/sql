@@ -36,3 +36,9 @@ SELECT AVG(duration)
   actors LIKE '%Sugith Varughes%'
  ) AND year != '2018'
 -- Answer: 136.0769
+
+-- Exercise 7
+SELECT title, genre, (worlwide_gross_income_in_USD - budget) AS profit
+ FROM movies
+ WHERE production_company = 'DreamWorks'
+ ORDER BY profit DESC
