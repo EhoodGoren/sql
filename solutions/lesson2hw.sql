@@ -42,3 +42,9 @@ SELECT title, genre, (worlwide_gross_income_in_USD - budget) AS profit
  FROM movies
  WHERE production_company = 'DreamWorks'
  ORDER BY profit DESC
+
+-- Exercise 8
+SELECT title, year, age_18_to_30_avg_vote as aav
+ FROM movies m LEFT JOIN ratings r ON (m.imdb_title_id = r.imdb_title_id)
+ WHERE actors LIKE '%Lin Shaye%'
+ ORDER BY aav
