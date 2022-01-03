@@ -11,3 +11,17 @@ SELECT athlete
  WHERE country = 'CAN'
  GROUP BY athlete
  HAVING COUNT(DISTINCT medal) = 3
+
+--  Exercise 3
+WITH all_athletes AS (
+ SELECT *
+  FROM summer
+ UNION
+ SELECT *
+  FROM winter
+)
+SELECT athlete, country, COUNT(medal) as medal_count, GROUP_CONCAT(event)
+ FROM all_athletes
+ GROUP BY athlete, country
+ ORDER BY medal_count DESC
+LIMIT 10
