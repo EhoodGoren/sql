@@ -6,7 +6,8 @@ SELECT country, COUNT(DISTINCT event) as cnt
  ORDER BY cnt DESC
 
 -- Exercise 2
-SELECT medal, GROUP_CONCAT(athlete), COUNT(athlete)
+SELECT athlete
  FROM summer
- WHERE country='CAN'
- GROUP BY medal
+ WHERE country = 'CAN'
+ GROUP BY athlete
+ HAVING COUNT(DISTINCT medal) = 3
