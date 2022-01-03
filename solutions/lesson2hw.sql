@@ -73,3 +73,10 @@ SELECT year, avg(average_vote) as year_avg
  WHERE language = 'English'
  GROUP BY year
  ORDER BY year_avg DESC
+
+
+-- Exercise 12
+SELECT title, females_vote_count, males_vote_count, (females_avg_vote - males_avg_vote) AS gender_avg_diff
+ FROM movies m JOIN ratings r ON (m.imdb_title_id = r.imdb_title_id)
+ ORDER BY gender_avg_diff DESC
+limit 10
