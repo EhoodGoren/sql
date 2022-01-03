@@ -26,3 +26,13 @@ SELECT votes_1
 SELECT COUNT(DISTINCT production_company)
  FROM movies
 -- Answer: 2321
+
+-- Exercise 6
+SELECT AVG(duration)
+ FROM movies
+ WHERE (
+  actors LIKE '%Dharmajan Bolgatty%'
+  OR
+  actors LIKE '%Sugith Varughes%'
+ ) AND year != '2018'
+-- Answer: 136.0769
