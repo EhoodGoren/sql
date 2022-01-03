@@ -66,3 +66,10 @@ SELECT genre, AVG(duration) as avg_duration
  GROUP BY genre
  ORDER BY avg_duration DESC
 LIMIT 3
+
+-- Exercise 11
+SELECT year, avg(average_vote) as year_avg
+ FROM movies m JOIN ratings r ON (m.imdb_title_id = r.imdb_title_id)
+ WHERE language = 'English'
+ GROUP BY year
+ ORDER BY year_avg DESC
