@@ -31,4 +31,3 @@ SELECT discipline, event, medal, athlete, country,
   COUNT(medal) OVER(PARTITION BY athlete) AS athlete_medals
  FROM summer
  WHERE city='London'
- LIMIT 1000
