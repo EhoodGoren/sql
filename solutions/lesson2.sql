@@ -25,3 +25,10 @@ SELECT athlete, country, COUNT(medal) as medal_count, GROUP_CONCAT(event)
  GROUP BY athlete, country
  ORDER BY medal_count DESC
 LIMIT 10
+
+-- Exercise 4
+SELECT discipline, event, medal, athlete, country,
+  COUNT(medal) OVER(PARTITION BY athlete) AS athlete_medals
+ FROM summer
+ WHERE city='London'
+ LIMIT 1000
