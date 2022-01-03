@@ -48,3 +48,13 @@ SELECT title, year, age_18_to_30_avg_vote as aav
  FROM movies m LEFT JOIN ratings r ON (m.imdb_title_id = r.imdb_title_id)
  WHERE actors LIKE '%Lin Shaye%'
  ORDER BY aav
+
+-- Exercise 9
+SELECT AVG(age_0_to_18_avg_vote) as avg ,'avg0_18' as age_group FROM ratings
+UNION
+SELECT AVG(age_18_to_30_avg_vote) as avg ,'avg18_30' as age_group FROM ratings
+UNION 
+SELECT AVG(age_30_to_45_avg_vote) as avg ,'avg30_45' as age_group FROM ratings
+UNION
+SELECT AVG(age_45_plus_avg_vote) as avg ,'avg45_plus' as age_group FROM ratings
+ORDER BY avg
