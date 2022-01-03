@@ -21,3 +21,8 @@ SELECT votes_1
  FROM movies m JOIN ratings r ON (m.imdb_title_id = r.imdb_title_id)
  WHERE title = 'Joker'
 -- Answer: 10650
+
+-- Exercise 5
+SELECT COUNT(DISTINCT production_company)
+ FROM movies
+-- Answer: 2321
