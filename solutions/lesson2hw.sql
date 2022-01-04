@@ -109,3 +109,16 @@ WITH athlete_first_medal AS (
 )
 SELECT *
  FROM summer s LEFT JOIN athlete_first_medal a_f_m ON (s.athlete = a_f_m.athlete)
+
+-- Exercise 2
+WITH winter_summer AS (
+ SELECT *
+  FROM summer
+ UNION
+ SELECT *
+  FROM winter
+)
+SELECT athlete, GROUP_CONCAT(event)
+ FROM winter_summer
+ GROUP BY athlete
+ HAVING COUNT(DISTINCT event) > 1
