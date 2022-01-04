@@ -99,3 +99,13 @@ SELECT title, year,  m.director, d_a.avg_duration, m.production_company, c_f_m.f
   LEFT JOIN director_avg d_a ON (m.director = d_a.director)
   LEFT JOIN company_first_movie c_f_m ON (m.production_company = c_f_m.production_company)
  WHERE language = 'English'
+
+-- Olympics
+-- Exercise 1
+WITH athlete_first_medal AS (
+ SELECT athlete, MIN(year) AS first_medal
+  FROM summer
+  GROUP BY athlete
+)
+SELECT *
+ FROM summer s LEFT JOIN athlete_first_medal a_f_m ON (s.athlete = a_f_m.athlete)
