@@ -136,3 +136,17 @@ SELECT athlete, GROUP_CONCAT(DISTINCT d.country) AS countries
  FROM winter_summer w_s JOIN dictionary d ON (w_s.country = d.code)
  GROUP BY athlete
  HAVING COUNT(DISTINCT w_s.country) > 1
+
+-- Exercise 4
+WITH winter_summer AS (
+ SELECT *
+  FROM summer
+ UNION
+ SELECT *
+  FROM winter
+)
+SELECT d.country, d.population, COUNT(medal) AS medal_count, d.population / COUNT(medal) AS ratio
+ FROM winter_summer w_s JOIN dictionary d ON (w_s.country = d.code)
+ GROUP BY d.country, d.population
+ ORDER BY ratio DESC
+ LIMIT 15
