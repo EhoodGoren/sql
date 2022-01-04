@@ -1,0 +1,1 @@
+DROP TABLE Event, City, Disaster, Prediction, Measures;
