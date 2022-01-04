@@ -80,3 +80,22 @@ SELECT title, females_vote_count, males_vote_count, (females_avg_vote - males_av
  FROM movies m JOIN ratings r ON (m.imdb_title_id = r.imdb_title_id)
  ORDER BY gender_avg_diff DESC
 limit 10
+
+-- Exercise 13
+WITH director_avg AS (
+  SELECT director, AVG(duration) AS avg_duration
+   FROM movies
+   WHERE director IS NOT NULL
+   GROUP BY director
+ ),
+ company_first_movie AS (
+  SELECT production_company, MIN(year) AS first_year
+   FROM movies
+   WHERE production_company IS NOT NULL
+   GROUP BY production_company
+)
+SELECT title, year,  m.director, d_a.avg_duration, m.production_company, c_f_m.first_year
+ FROM movies m
+  LEFT JOIN director_avg d_a ON (m.director = d_a.director)
+  LEFT JOIN company_first_movie c_f_m ON (m.production_company = c_f_m.production_company)
+ WHERE language = 'English'
