@@ -1,0 +1,1 @@
+DROP TABLE Coach, Types, Coaches, Clients, Training_sequence;
