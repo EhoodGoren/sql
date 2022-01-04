@@ -122,3 +122,17 @@ SELECT athlete, GROUP_CONCAT(event)
  FROM winter_summer
  GROUP BY athlete
  HAVING COUNT(DISTINCT event) > 1
+
+
+-- Exercise 3
+WITH winter_summer AS (
+ SELECT *
+  FROM summer
+ UNION
+ SELECT *
+  FROM winter
+)
+SELECT athlete, GROUP_CONCAT(DISTINCT d.country) AS countries
+ FROM winter_summer w_s JOIN dictionary d ON (w_s.country = d.code)
+ GROUP BY athlete
+ HAVING COUNT(DISTINCT w_s.country) > 1
