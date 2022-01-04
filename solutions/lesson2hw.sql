@@ -150,3 +150,18 @@ SELECT d.country, d.population, COUNT(medal) AS medal_count, d.population / COUN
  GROUP BY d.country, d.population
  ORDER BY ratio DESC
  LIMIT 15
+
+-- Exercise 5
+WITH country_pts AS (
+ SELECT country, CASE WHEN medal = 'Gold' THEN 100
+   WHEN medal = 'Silver' THEN 50
+   WHEN medal = 'Bronze' THEN 30
+   ELSE 0
+  END as points
+  FROM summer
+  WHERE city = 'Barcelona'
+)
+SELECT country, SUM(points) * count(country) AS score
+ FROM country_pts
+ GROUP BY country
+ ORDER BY score DESC
